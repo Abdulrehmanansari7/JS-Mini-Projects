@@ -1,20 +1,23 @@
-const modal = document.querySelector('.modal')
-const modalBtn = document.getElementById('sample-modal')
-const closeBtn = document.querySelector('.closeBtn')
+const openBtn = document.getElementById('open-btn');
+const closeBtn = document.getElementById('close-btn');
+const modal = document.getElementById('modal');
 
-modalBtn.addEventListener('click', openFnct);
+
+openBtn.addEventListener('click', openFnct);
 
 function openFnct(){
     modal.style.display = 'block'
 }
 
 closeBtn.addEventListener('click', closeFnct);
+
 function closeFnct(){
-    modal.style.display = 'none'
+    modal.style.display = "none"
 }
 
-modal.addEventListener('click', open)
-function open(e){
+window.addEventListener('click', fnct);
+
+function fnct(e){
     if(e.target == modal){
         modal.style.display = 'none'
     }

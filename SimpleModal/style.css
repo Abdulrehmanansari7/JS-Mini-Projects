@@ -1,41 +1,52 @@
 body{
     font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.8;
     font-size: 16px;
-    line-height: 1.6;
 }
 
-.modal-btn{
+.open-btn{
     background-color: coral;
+    border: none;
     font-size: 20px;
-    padding: 16px 32px;
-    color: white;
-    border: none
+    color: #f3f3f3;
+    padding: 10px 15px;
 }
 
-.modal-btn:hover{
+.open-btn:hover{
     background-color: #333;
-    color: #f3f3f3;
+    color: #ccc;
 }
 
 .modal{
     display: none;
     position: fixed;
-    z-index: 1;
-    left: 0;
     top: 0;
-    background-color: rgba(0, 0, 0, 0.5);
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.7);
     height: 100%;
     width: 100%;
     overflow: auto;
 }
 
 .modal-content{
-    background-color: #ccc;
     margin: 10% auto;
-    width: 70%;
+    background-color: #f3f3f3;
+    width: 60%;
     box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2),0 7px 20px 0 rgba(0, 0, 0, 0.5);
     animation-name: openModal;
     animation-duration: 2s;
+}
+
+.close-btn{
+    float: right;
+    cursor: pointer;
+    font-size: 30px;
+    color: #f3f3f3;
+    /* margin-right: 40px; */
+}
+
+.close-btn:hover{
+    color: #333;
 }
 
 .modal-header h2, .modal-footer h3{
@@ -44,31 +55,20 @@ body{
 
 .modal-header{
     background-color: coral;
+    padding: 20px 30px;
     color: #f3f3f3;
-    padding: 15px 30px;
 }
 
 .modal-body{
+    padding: 10px 15px;
     font-size: 20px;
-    padding: 15px 30px;
 }
 
 .modal-footer{
     background-color: coral;
-    padding: 10px;
+    padding: 10px 15px;
     color: #f3f3f3;
     text-align: center;
-}
-
-.closeBtn{
-    float: right;
-    font-size: 30px;
-    color: #f3f3f3;
-    cursor: pointer;
-}
-
-.closeBtn:hover, .closeBtn:focus{
-    color: #333;
 }
 
 @Keyframes openModal{
