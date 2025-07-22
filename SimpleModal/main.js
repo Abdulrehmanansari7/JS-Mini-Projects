@@ -1,24 +1,31 @@
-const openBtn = document.getElementById('open-btn');
-const closeBtn = document.getElementById('close-btn');
-const modal = document.getElementById('modal');
+const openBtn = document.querySelector('.open-btn');
+const closeBtn = document.querySelector('.close-btn')
+const modal = document.querySelector('.modal')
 
-
-openBtn.addEventListener('click', openFnct);
-
-function openFnct(){
+openBtn.addEventListener('click', () => {
     modal.style.display = 'block'
-}
+    modal.classList.remove('hide')
+    modal.classList.add('show')
+})
 
-closeBtn.addEventListener('click', closeFnct);
+closeBtn.addEventListener('click', closeModal)
 
-function closeFnct(){
-    modal.style.display = "none"
-}
-
-window.addEventListener('click', fnct);
-
-function fnct(e){
+window.addEventListener('click', (e) => {
     if(e.target == modal){
-        modal.style.display = 'none'
+        modal.classList.remove('show')
+        modal.classList.add('hide')
+
+        setTimeout(() => {
+            modal.style.display = 'none'
+        },700)
     }
+})
+
+function closeModal(){
+    modal.classList.remove('show')
+    modal.classList.add('hide')
+
+    setTimeout(() => {
+        modal.style.display = 'none'
+    },700)
 }
